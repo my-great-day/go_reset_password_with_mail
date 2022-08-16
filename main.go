@@ -12,12 +12,12 @@ func (h httpHandler) ServeHTTP(resp http.ResponseWriter, req *http.Request){
 }
 
 func main() {
-	h1 := httpHandler{message: "index"}
-	h2 := httpHandler{message: "About"}
+	handle1 := httpHandler{message: "index"}
+	handle2 := httpHandler{message: "Reset"}
 
-	http.Handle("/", h1)
-	http.Handle("/about", h2)
+	http.Handle("/", handle1)
+	http.Handle("/reset", handle2)
 
-	fmt.Println("Server is listening from http://localhost:8181...")
-    http.ListenAndServe(":8181", nil)
+	fmt.Println("Server is starting from http://localhost:8181...")
+    	http.ListenAndServe(":8181", nil)
 }
